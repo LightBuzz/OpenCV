@@ -4,6 +4,8 @@ This repository provides pre-built OpenCV binaries and demos for Apple platforms
 
 IMAGE
 
+## Supported platforms and architectures
+
 | Platform | Architecture | |
 | --- | --- | --- |
 | iOS | ARM64 | ✅ |
@@ -12,6 +14,13 @@ IMAGE
 | Mac Catalyst | ARM64 | ✅ |
 | iOS simulator | ARM64 | ✅ |
 | iOS simulator | x86_64 | ✅ |
+
+## Available demos
+
+| Demo | Description |
+| --- | --- |
+| [iOS](LICENSE) | _A simple XCode project for iPhone, iPad, Mac Catalyst, and Simulators._ |
+| [visionOS](LICENSE) | _An immersive XCode project targeting the Apple Vision Pro._ |
 
 ## 💡 Need a custom solution?
 
