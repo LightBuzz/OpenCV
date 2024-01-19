@@ -1,25 +1,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    // State variable to keep track of the current UIImage
-    @State private var currentImage = UIImage(named: "image")!
+    @State private var image = UIImage(named: "image")!
 
     var body: some View {
         VStack {
-            Image(uiImage: currentImage)
+            Image(uiImage: image)
                 .resizable()
                 .scaledToFit()
 
             Button("Convert to grayscale") {
-                let grayImage = OpenCVWrapper.toGrayscale(currentImage)
-                currentImage = grayImage
+                let grayImage = OpenCVWrapper.toGrayscale(image)
+                image = grayImage
             }
             .padding()
             .buttonStyle(.bordered)
             
             Button("Apply gaussian blur") {
-                let grayImage = OpenCVWrapper.gaussianBlur(currentImage, 125)
-                currentImage = grayImage
+                let blurImage = OpenCVWrapper.gaussianBlur(image, 125)
+                image = blurImage
             }
             .padding()
             .buttonStyle(.bordered)
