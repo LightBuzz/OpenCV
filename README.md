@@ -1,26 +1,59 @@
-# OpenCV
+# OpenCV for Apple platforms
 
-This repository provides pre-built OpenCV binaries and demos for Apple platforms: iOS, iPadOS, visionOS, and simulators.
+This repository provides pre-built universal OpenCV binaries and demos for Apple platforms: iOS, iPadOS, visionOS, Mac, and simulators.
 
-IMAGE
+![opencv-vision-pro-cover](https://github.com/LightBuzz/OpenCV/assets/562680/8908794a-c235-4ffd-afa5-a3a79fcc0af7)
 
 ## Supported platforms and architectures
 
+Building OpenCV as an `.xcframework` library allows us to support multiple platforms with a single binary.
+
 | Platform | Architecture | |
 | --- | --- | --- |
-| iOS | ARM64 | ✅ |
-| iPadOS | ARM64 | ✅ |
+| iOS/iPadOS | ARM64 | ✅ |
+| iOS/iPadOS simulator | ARM64 | ✅ |
+| iOS/iPadOS simulator | x86_64 | ✅ |
 | visionOS | ARM64 | ✅ |
+| visionOS simulator | ARM64 | ✅ |
 | Mac Catalyst | ARM64 | ✅ |
-| iOS simulator | ARM64 | ✅ |
-| iOS simulator | x86_64 | ✅ |
 
-## Available demos
+### [⬇️ Download opencv2.xcframework](https://github.com/LightBuzz/OpenCV/tree/main/OpenCV-Apple-Mutliplatform/opencv2.xcframework)
 
-| Demo | Description |
-| --- | --- |
-| [iOS](LICENSE) | _A simple XCode project for iPhone, iPad, Mac Catalyst, and Simulators._ |
-| [visionOS](LICENSE) | _An immersive XCode project targeting the Apple Vision Pro._ |
+## How to run
+
+This repository includes a [sample project](https://github.com/LightBuzz/OpenCV/tree/main/OpenCV-Apple-Mutliplatform). Here's what you need to do:
+
+1. [Download opencv2.xcframework](https://github.com/LightBuzz/OpenCV/tree/main/OpenCV-Apple-Mutliplatform/opencv2.xcframework).
+1. Create an Xcode multiplatform project.
+2. Add opencv2.xcframework under `Frameworks, Libraries, and Embedded Content`.
+3. Create a [Bridging Header](https://github.com/LightBuzz/OpenCV/blob/main/OpenCV-Apple-Mutliplatform/OpenCV-Apple-Mutliplatform/OpenCV-Apple-Mutliplatform-Bridging-Header.h).
+4. Create a [Prefix Header](https://github.com/LightBuzz/OpenCV/blob/main/OpenCV-Apple-Mutliplatform/OpenCV-Apple-Mutliplatform/PrefixHeader.pch).
+5. Add and populate our [OpenCV wrapper](https://github.com/LightBuzz/OpenCV/blob/main/OpenCV-Apple-Mutliplatform/OpenCV-Apple-Mutliplatform/OpenCVWrapper.mm).
+6. Select your build target (iPhone device, visionOS device, simulator, etc).
+7. Run.
+
+https://github.com/LightBuzz/OpenCV/assets/562680/e97955fa-6070-4f4f-8dc7-42518573fbac
+
+## Build OpenCV for all Apple platforms
+
+👉 [Read the complete guide](https://lightbuzz.com/?p=6530&preview=true)
+
+🪄 Here's the magic script to build OpenCV from scratch:
+
+```Bash
+git clone https://github.com/opencv/opencv.git
+git checkout tags/4.9.0
+cd opencv
+
+python3 platforms/apple/build_xcframework.py --out build_all \
+--iphoneos_deployment_target 14.0 \
+--iphoneos_archs arm64 \
+--iphonesimulator_archs arm64,x86_64 \
+--visionos_archs arm64 \
+--visionsimulator_archs arm64 \
+--build_only_specified_archs True \
+--without objc
+```
 
 ## 💡 Need a custom solution?
 
@@ -41,4 +74,12 @@ LightBuzz is here to turn your vision into reality. Let's discuss how we can bri
 - [Website](https://lightbuzz.com)
 - [LinkedIn](https://linkedin.com/company/lightbuzz)
 - [YouTube](http://youtube.com/c/lightbuzzsoftware)
-- [Facebook](https://facebook.com/lightbuzz.software)
+- [Medium](https://medium.com/lightbuzz)
+- 
+
+## 📖 Resources
+
+- [OpenCV source code | GitHub](https://github.com/opencv/opencv/)
+- [OpenCV: Installation in iOS | Official Guide](https://docs.opencv.org/4.8.0/d5/da3/tutorial_ios_install.html)
+- [Build OpenCV Contrib as a .xcframework, for iOS, on a M1 | elfitz.com](https://weekly.elfitz.com/2022/06/14/build-opencv-contrib-for-ios/)
+- [Integrating OpenCV to your Swift iOS Project in Xcode and Working with UIImages | by Poorna Chathuranjana | Medium](https://medium.com/@hdpoorna/4c614e62ac88)
