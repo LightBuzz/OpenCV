@@ -1,3 +1,7 @@
+// Credits:
+// Poorna Chathuranjana
+// https://medium.com/@hdpoorna/4c614e62ac88
+
 #import <opencv2/opencv.hpp>
 #import <opencv2/imgcodecs/ios.h>
 #import "OpenCVWrapper.h"
@@ -50,8 +54,6 @@
     [image convertToMat: &mat :false];
     
     cv::Mat gray;
-    
-    NSLog(@"channels = %d", mat.channels());
 
     if (mat.channels() > 1) {
         cv::cvtColor(mat, gray, cv::COLOR_RGB2GRAY);
@@ -83,8 +85,6 @@
     if (mat.channels() == 4) {
         [image convertToMat: &mat :true];
     }
-    
-    NSLog(@"source shape = (%d, %d)", mat.cols, mat.rows);
     
     cv::Mat resized;
     
