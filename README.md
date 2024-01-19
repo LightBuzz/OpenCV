@@ -2,7 +2,7 @@
 
 This repository provides pre-built universal OpenCV binaries and demos for Apple platforms: iOS, iPadOS, visionOS, Mac, and simulators.
 
-![opencv-vision-pro-cover](https://github.com/LightBuzz/OpenCV/assets/562680/c6992324-f0be-4fa4-9b95-bf6c9827e151)
+![opencv-vision-pro-cover](https://github.com/LightBuzz/OpenCV/assets/562680/8908794a-c235-4ffd-afa5-a3a79fcc0af7)
 
 ## Supported platforms and architectures
 
