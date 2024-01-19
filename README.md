@@ -1,26 +1,42 @@
 # OpenCV
 
-This repository provides pre-built OpenCV binaries and demos for Apple platforms: iOS, iPadOS, visionOS, and simulators.
+This repository provides pre-built OpenCV binaries and demos for Apple platforms: iOS, iPadOS, visionOS, Mac, and simulators.
 
-IMAGE
+
 
 ## Supported platforms and architectures
 
 | Platform | Architecture | |
 | --- | --- | --- |
-| iOS | ARM64 | ✅ |
-| iPadOS | ARM64 | ✅ |
+| iOS/iPadOS | ARM64 | ✅ |
+| iOS/iPadOS simulator | ARM64 | ✅ |
+| iOS/iPadOS simulator | x86_64 | ✅ |
 | visionOS | ARM64 | ✅ |
+| visionOS simulator | ARM64 | ✅ |
 | Mac Catalyst | ARM64 | ✅ |
-| iOS simulator | ARM64 | ✅ |
-| iOS simulator | x86_64 | ✅ |
 
-## Available demos
+## How to run
 
-| Demo | Description |
-| --- | --- |
-| [iOS](LICENSE) | _A simple XCode project for iPhone, iPad, Mac Catalyst, and Simulators._ |
-| [visionOS](LICENSE) | _An immersive XCode project targeting the Apple Vision Pro._ |
+## Build OpenCV for all Apple platforms
+
+👉 [Read the complete guide](https://lightbuzz.com/?p=6530&preview=true)
+
+🪄 Here's the magic script:
+
+```Bash
+git clone https://github.com/opencv/opencv.git
+git checkout tags/4.9.0
+cd opencv
+
+python3 platforms/apple/build_xcframework.py --out build_all \
+--iphoneos_deployment_target 14.0 \
+--iphoneos_archs arm64 \
+--iphonesimulator_archs arm64,x86_64 \
+--visionos_archs arm64 \
+--visionsimulator_archs arm64 \
+--build_only_specified_archs True \
+--without objc
+```
 
 ## 💡 Need a custom solution?
 
