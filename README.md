@@ -75,3 +75,11 @@ LightBuzz is here to turn your vision into reality. Let's discuss how we can bri
 - [LinkedIn](https://linkedin.com/company/lightbuzz)
 - [YouTube](http://youtube.com/c/lightbuzzsoftware)
 - [Medium](https://medium.com/lightbuzz)
+- 
+
+## Resources
+
+- [OpenCV source code | GitHub](https://github.com/opencv/opencv/)
+- [OpenCV: Installation in iOS | Official Guide](https://docs.opencv.org/4.8.0/d5/da3/tutorial_ios_install.html)
+- [Build OpenCV Contrib as a .xcframework, for iOS, on a M1 | elfitz.com](https://weekly.elfitz.com/2022/06/14/build-opencv-contrib-for-ios/)
+- [Integrating OpenCV to your Swift iOS Project in Xcode and Working with UIImages | by Poorna Chathuranjana | Medium](https://medium.com/@hdpoorna/integrating-opencv-to-your-swift-ios-project-in-xcode-and-working-with-uiimages-4c614e62ac88)
