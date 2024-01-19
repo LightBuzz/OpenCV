@@ -77,7 +77,7 @@ LightBuzz is here to turn your vision into reality. Let's discuss how we can bri
 - [Medium](https://medium.com/lightbuzz)
 - 
 
-## Resources
+## 📖 Resources
 
 - [OpenCV source code | GitHub](https://github.com/opencv/opencv/)
 - [OpenCV: Installation in iOS | Official Guide](https://docs.opencv.org/4.8.0/d5/da3/tutorial_ios_install.html)
